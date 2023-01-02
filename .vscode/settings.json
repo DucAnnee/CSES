@@ -19,6 +19,11 @@
         "valarray": "cpp",
         "vector": "cpp",
         "xstring": "cpp",
-        "ostream": "cpp"
+        "ostream": "cpp",
+        "cmath": "cpp",
+        "complex": "cpp",
+        "random": "cpp",
+        "codecvt": "cpp",
+        "xlocale": "cpp"
     }
 }
