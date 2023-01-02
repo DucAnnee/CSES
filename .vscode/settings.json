@@ -24,6 +24,7 @@
         "complex": "cpp",
         "random": "cpp",
         "codecvt": "cpp",
-        "xlocale": "cpp"
+        "xlocale": "cpp",
+        "ios": "cpp"
     }
 }

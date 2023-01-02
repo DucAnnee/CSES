@@ -27,21 +27,5 @@ static int dx[] = { -1, -1, -1, 0, 0, 1, 1, 1 };
 static int dy[] = { -1, 0, 1, -1, 1, -1, 0, 1 };
 
 int main(){
-    ull n, m = 2, z = 1;
-    cin >> n;
-    if (n%2) {
-        z = 2;
-        n--;
-    }
-    while (n!=1) {
-        if (n%2) {
-            n--;
-            m *= 2;
-        }
-        else {
-            n/=2;
-            m *= m;
-        }
-    }
-    cout << fixed << setprecision(0) << pow(m,n)*z;
+
 }
