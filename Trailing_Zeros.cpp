@@ -27,11 +27,11 @@ static int dx[] = { -1, -1, -1, 0, 0, 1, 1, 1 };
 static int dy[] = { -1, 0, 1, -1, 1, -1, 0, 1 };
 
 int main(){
-    ll n, count = 0;
+    ll n, current = 5, result = 0;
     cin >> n;
-    while (n%5==0 && n > 0){
-        n-=5;
-        count++;
+    while (current <= n) {
+        result += n/current;
+        current *= 5;
     }
-    cout << count;
+    cout << result;
 }
