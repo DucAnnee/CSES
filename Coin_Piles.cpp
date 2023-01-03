@@ -27,5 +27,10 @@ static int dx[] = { -1, -1, -1, 0, 0, 1, 1, 1 };
 static int dy[] = { -1, 0, 1, -1, 1, -1, 0, 1 };
 
 int main(){
-     
+    ull t, a, b;
+    cin >> t;
+    while (t--){
+        cin >> a >> b;
+        cout << ((a + b) % 3 == 0 && (min(a, b) * 2 >= max(a, b)) ? "YES" : "NO") << endl;
+    }
 }
