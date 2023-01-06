@@ -10,6 +10,7 @@ using namespace std;
 #define ld long double
 #define ull unsigned long long int  // ranges from (0 - twice of long long int)
 #define pb push_back
+#define pf push_front
 #define mp make_pair
 #define vll vector<ll>
 #define mod 1000000007LL
@@ -26,12 +27,36 @@ using namespace std;
 static int dx[] = { -1, -1, -1, 0, 0, 1, 1, 1 };
 static int dy[] = { -1, 0, 1, -1, 1, -1, 0, 1 };
 
-int main(){
-    ull t, a, b;
-    cin >> t;
-    while (t--){
-        cin >> a >> b;
-        cout << ((a + b) % 3 == 0 && (min(a, b) * 2 >= max(a, b)) ? "YES" : "NO") << endl;
+vector<string> reflect(vector<string> a){
+    vector<string> temp;
+    loop(i,0,a.size()) {
+        temp.pb(a[i]);
+        a[i] = "0" + a[i];
+        temp[i] = "1" + temp[i];
     }
-    
+    reverse(temp.begin(), temp.end());
+    a.insert(a.end(), temp.begin(), temp.end());
+    return a;
+}
+vector<string> graycode(ll n, vector<string> a){
+    if (n == 1) {
+        a.pb("0");
+        a.pb("1");
+        return a;
+    }
+    else {
+        a = graycode(n-1, a);
+        a = reflect(a);
+        return a;
+    }
+}
+
+int main(){
+    ll n, temp;
+    cin >> n;
+    vector<string> a;
+    a = graycode(n, a);
+    loop(i, 0, a.size()){
+        cout << a[i] << endl;
+    }
 }
