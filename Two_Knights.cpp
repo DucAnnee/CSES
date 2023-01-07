@@ -33,6 +33,5 @@ int main(){
         total_combinations = (i*i*(i*i-1))/2;
         total_attack = 4*(i-2)*(i-1);
         cout << total_combinations - total_attack << endl;
-    }
-    
+    }   
 }
