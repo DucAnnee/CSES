@@ -1,8 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-#define loop(i,a,b) for (ll i = a; i < b; i++)
-#define reloop(i,a,b) for (ll i = a; i>= b; i--)
+#define loop(i,a,b) for (int i = a; i < b; i++)
+#define reloop(i,a,b) for (int i = a; i>= b; i--)
 #define fio ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
 #pragma GCC optimize "trapv"
 #define _GLIBCXX_DEBUG
@@ -48,23 +48,25 @@ int main(){
             odd_pos = i;
         }
     }
-    for (int x : count) cout << x << " ";
-    cout << endl << odd << odd_pos << endl;
+    
     if (odd > 1){
         cout << "NO SOLUTION";
     }
     else {
-        loop(i, 0, sizeof(count)) {
-            if (count[i] % 2 == 0 && count[i] != 0) {
-                loop(i, 0, count[i]) cout << str+=char(i+65);
+        loop(i, 0, 26) {
+            if ( (count[i] % 2 == 0) & (count[i] != 0) ) {
+                loop(j, 0, count[i]/2) {
+                    str+=char(i+65);
+                }                
             }
         }
         cout << str;
         if (odd == 1) {
-            loop (i, 0, count[odd_pos]) {
-                cout << char(i+65);
+            loop (j, 0, count[odd_pos]) {
+                cout << char(odd_pos+65);
             }
         }
         reverseStr(str);
+        cout << str;
     }
 }
