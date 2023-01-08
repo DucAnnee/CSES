@@ -27,5 +27,12 @@ static int dx[] = { -1, -1, -1, 0, 0, 1, 1, 1 };
 static int dy[] = { -1, 0, 1, -1, 1, -1, 0, 1 };
 
 int main(){
-
+    string str;
+    getline(cin, str);
+    sort(str.begin(), str.end());
+    vector<string> ans;
+    do ans.pb(str);
+    while (next_permutation(str.begin(), str.end()));
+    cout << ans.size() << endl;
+    for (auto s : ans) cout << s << endl;
 }
