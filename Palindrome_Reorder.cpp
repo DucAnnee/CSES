@@ -27,6 +27,44 @@ using namespace std;
 static int dx[] = { -1, -1, -1, 0, 0, 1, 1, 1 };
 static int dy[] = { -1, 0, 1, -1, 1, -1, 0, 1 };
 
-int main(){
+void reverseStr(string& str)
+{
+    int n = str.length();
+    for (int i = 0; i < n / 2; i++)
+        swap(str[i], str[n - i - 1]);
+}
 
+int main(){
+    string input, str = "";
+    int odd = 0, odd_pos = -1;
+    vector<int> count(26,0);
+    getline(cin, input);
+    for (auto c:input){
+        count[int(c - 'A')]++; 
+    }
+    loop(i, 0, sizeof(count)){
+        if (count[i]%2) {
+            odd++;
+            odd_pos = i;
+        }
+    }
+    for (int x : count) cout << x << " ";
+    cout << endl << odd << odd_pos << endl;
+    if (odd > 1){
+        cout << "NO SOLUTION";
+    }
+    else {
+        loop(i, 0, sizeof(count)) {
+            if (count[i] % 2 == 0 && count[i] != 0) {
+                loop(i, 0, count[i]) cout << str+=char(i+65);
+            }
+        }
+        cout << str;
+        if (odd == 1) {
+            loop (i, 0, count[odd_pos]) {
+                cout << char(i+65);
+            }
+        }
+        reverseStr(str);
+    }
 }

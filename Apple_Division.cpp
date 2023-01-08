@@ -1,8 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-#define loop(i,a,b) for (ll i = a; i < b; i++)
-#define reloop(i,a,b) for (ll i = a; i>= b; i--)
+#define loop(i,a,b) for (int i = a; i < b; i++)
+#define reloop(i,a,b) for (int i = a; i>= b; i--)
 #define fio ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
 #pragma GCC optimize "trapv"
 #define _GLIBCXX_DEBUG
@@ -28,5 +28,7 @@ static int dx[] = { -1, -1, -1, 0, 0, 1, 1, 1 };
 static int dy[] = { -1, 0, 1, -1, 1, -1, 0, 1 };
 
 int main(){
-
+    ll n;
+    cin >> n;
+    
 }
