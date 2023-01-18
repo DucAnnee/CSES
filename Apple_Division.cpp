@@ -27,22 +27,21 @@ using namespace std;
 static int dx[] = { -1, -1, -1, 0, 0, 1, 1, 1 };
 static int dy[] = { -1, 0, 1, -1, 1, -1, 0, 1 };
 
-ll apple_division(vector<ll> weight, ll sum) {
-	
+ll solve(vector<ll> weight, ll sum, ll idx, ll CurrSum) {
+	if (idx == 0) return abs((sum - CurrSum)-CurrSum);
+	return min(solve(weight, sum, idx - 1, CurrSum),
+			   solve(weight, sum, idx - 1, CurrSum + weight[idx-1]));
 }
 
 int main(){
-    ll n, temp, sum = 0, min;
-    cin >> n;
+	ll n, temp, sum = 0, min;
+	cin >> n;
     vector<ll> weight;
     loop(i,0,n) {
         cin >> temp;
         weight.pb(temp);
-    }
-    sortall(weight);
-    for (auto w : weight) {
-        sum += w;
-    }
-    min = apple_division(weight, sum);
+		sum += temp;
+    }  
+	min = solve(weight, sum, n, 0);
     cout << min;
 }
