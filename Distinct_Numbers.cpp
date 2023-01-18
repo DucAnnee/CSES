@@ -1,8 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-#define loop(i,a,b) for (int i = a; i < b; i++)
-#define reloop(i,a,b) for (int i = a; i>= b; i--)
+#define loop(i,a,b) for (ll i = a; i < b; i++)
+#define reloop(i,a,b) for (ll i = a; i>= b; i--)
 #define fio ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
 #pragma GCC optimize "trapv"
 #define _GLIBCXX_DEBUG
@@ -27,22 +27,13 @@ using namespace std;
 static int dx[] = { -1, -1, -1, 0, 0, 1, 1, 1 };
 static int dy[] = { -1, 0, 1, -1, 1, -1, 0, 1 };
 
-ll apple_division(vector<ll> weight, ll sum) {
-	
-}
-
 int main(){
-    ll n, temp, sum = 0, min;
-    cin >> n;
-    vector<ll> weight;
-    loop(i,0,n) {
-        cin >> temp;
-        weight.pb(temp);
-    }
-    sortall(weight);
-    for (auto w : weight) {
-        sum += w;
-    }
-    min = apple_division(weight, sum);
-    cout << min;
+	ll n, m, count = 0;
+	set<ll> value;
+	cin >> n;
+	loop(i,0,n){
+		cin >> m;
+		value.insert(m);
+	}	
+	cout << value.size();
 }
