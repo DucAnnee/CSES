@@ -28,5 +28,19 @@ static int dx[] = { -1, -1, -1, 0, 0, 1, 1, 1 };
 static int dy[] = { -1, 0, 1, -1, 1, -1, 0, 1 };
 
 int main(){
-
+	vector <llpair> customer;
+	llpair time;
+	ll n, arrive, leave, maximum=0, current_customer=0;
+	cin >> n;
+	loop(i,0,n){
+		cin >> arrive >> leave;
+		customer.pb(make_pair(arrive, +1));
+		customer.pb(make_pair(leave, -1));
+	}
+	sortall(customer);
+	loop(i,0,2*n){
+		current_customer += customer[i].second;		
+		maximum = max(maximum, current_customer);
+	}
+	cout << maximum;
 }
