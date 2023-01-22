@@ -28,12 +28,24 @@ static int dx[] = { -1, -1, -1, 0, 0, 1, 1, 1 };
 static int dy[] = { -1, 0, 1, -1, 1, -1, 0, 1 };
 
 int main(){
-	multiset<ll> test;
-	test.insert(1);
-	test.insert(2);
-	test.insert(3);
-	test.insert(4);
-	test.insert(5);
-	auto it = test.begin();
-	cout << *it;
+	ll n, m, temp;
+	bool match;
+	multiset<ll> ticket_price;
+	vll customer_price;
+	cin >> n >> m;
+	loop(i,0,n){
+		cin >> temp;
+		ticket_price.insert(temp);
+	} 
+	loop(i,0,m){
+		cin >> temp;
+		auto it = ticket_price.upper_bound(temp);
+		if (it == ticket_price.begin()) cout << -1;
+		else {
+			it--;
+			cout << *it;
+			ticket_price.erase(it);
+		}
+		cout << endl;
+	}
 }
